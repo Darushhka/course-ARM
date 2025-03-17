@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="get" action="/Index">
+    <label for="dataTables">Выберите таблицу:</label>
+    <select id="dataTables" name="dataTables">
+        <option value="employees">employees</option>
+        <option value="patients">patients</option>
+        <option value="doctors">doctors</option>
+        <option value="appointments">appointments</option>
+        <option value="info_letters">info_letters</option>
+        <option value="reports">reports</option>
+        <option value="specializations">specializations</option>
+
+    </select>
+    <button type="submit">Отправить</button>
+</form>
+
+@if (Model.Id != null)
+{
+    <p>Полученное значение ID: @Model.Id</p>
+}
